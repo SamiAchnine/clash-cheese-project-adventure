@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://btdjgnw5sylk2"]
+
+[ext_resource type="Texture2D" uid="uid://d2a4nkvnidipm" path="res://icon.svg" id="1_7vw07"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(578, 77)
+scale = Vector2(8.8125, 1)
+texture = ExtResource("1_7vw07")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+
+[node name="TextEdit" type="TextEdit" parent="CanvasGroup"]
+offset_top = 249.0
+offset_right = 1265.0
+offset_bottom = 417.0
+placeholder_text = "THIS IS A PLACEHOLDER
+WWWWWWWWWWWWWW"
+editable = false
