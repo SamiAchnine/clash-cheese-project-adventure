@@ -1,2 +1,7 @@
+CanvasLayer
+VBoxContainer
+Button
+Label
+PanelContainer
 TextEdit
 CanvasGroup
