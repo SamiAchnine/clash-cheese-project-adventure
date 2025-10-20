@@ -31,55 +31,75 @@ var story = {
 			},
 		"inside_ruin": {
 		"text": "Inside, you find a glowing artifact. As you reach out, light fills your vision.",
-		"next": "end"
+		"choices":[{"text": "Okay", "next": "end"}]
 		},
 		"river_drink": {
 		"text": "The water is cool and refreshing. You feel renewed.",
-		"next": "end"
+		"choices":[{"text": "Okay", "next": "end"}]
 		},
 		"cross_river": {
 			"text": "You cross safely and see a village in the distance. Maybe you’ll find help there.",
-			"next": "end"
+			"choices":[{"text": "Okay", "next": "end"}]
 			},
 		"end": {
 		"text": "Your journey for now has ended. The forest whispers your name as you fade away..."
 		}
 }
 
-# current story node id
 var current_node_id = "start"
+var typing = false   # prevents overlapping input while typing
+var typing_speed = 0.03  # seconds per character (adjust to taste)
 
 func _ready():
 	next_button.pressed.connect(_on_next_pressed)
 	display_node(current_node_id)
 
-# Displays a story node
 func display_node(node_id: String):
 	current_node_id = node_id
 	var node_data = story[node_id]
-	text_label.text = node_data["text"]
-	
-# Clear old buttons
+# Clear UI
 	for child in choices_container.get_children():
 		child.queue_free()
-# Handle branching
+		
+	next_button.visible = false
+	text_label.text = ""
+
+# Start typewriter animation
+	type_text(node_data["text"])
+# Setup choices or next
 	if "choices" in node_data:
-		next_button.visible = false
+		await get_tree().create_timer(len(node_data["text"]) * typing_speed).timeout
 		for choice in node_data["choices"]:
 			var btn = Button.new()
 			btn.text = choice["text"]
 			btn.pressed.connect(func(): on_choice_selected(choice["next"]))
 			choices_container.add_child(btn)
 	else:
-			# No choices = just press "Next" to continue or end
-			next_button.visible = true
-			if "next" in node_data:
-				next_button.disabled = false
-			else:
-				next_button.disabled = true  # End of story
-				next_button.text = "End"
+		next_button.visible = true
+		if "next" in node_data:
+			next_button.disabled = false
+		else:
+			next_button.text = "End"
+			next_button.disabled = true
+
+# TYPEWRITER EFFECT
+func type_text(full_text: String) -> void:
+	typing = true
+	text_label.text = ""
+	for i in range(full_text.length()):
+		text_label.text = full_text.substr(0, i + 1)
+		await get_tree().create_timer(typing_speed).timeout
+		if not typing:
+			break
+			
+	text_label.text = full_text
+	typing = false
 
 func _on_next_pressed():
+	# Skip if typing
+	if typing:
+		typing = false
+		return
 	var node_data = story[current_node_id]
 	if "next" in node_data:
 		display_node(node_data["next"])
