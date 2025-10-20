@@ -7,51 +7,15 @@ extends CanvasLayer
 
 # STORY DATA
 # Each "node" of the story has an id, text, and optional choices that lead to another id.
-var story = {
-	"start": {
-		"text": "You wake up in a dark forest. Two paths lie before you.",
-		"choices": [
-			{"text": "Take the left path", "next": "left_path"},
-			{"text": "Take the right path", "next": "right_path"}
-			]
-		},
-	"left_path": {
-		"text": "The left path leads you to an ancient ruin. A door stands before you.",
-		"choices": [
-			{"text": "Enter the ruin", "next": "inside_ruin"},
-			{"text": "Go back", "next": "start"}
-			]
-		},
-		"right_path": {
-			"text": "You follow the right path and find a calm river. It looks peaceful.",
-			"choices": [
-				{"text": "Drink from the river", "next": "river_drink"},
-				{"text": "Cross the river", "next": "cross_river"}
-				]
-			},
-		"inside_ruin": {
-		"text": "Inside, you find a glowing artifact. As you reach out, light fills your vision.",
-		"choices":[{"text": "Okay", "next": "end"}]
-		},
-		"river_drink": {
-		"text": "The water is cool and refreshing. You feel renewed.",
-		"choices":[{"text": "Okay", "next": "end"}]
-		},
-		"cross_river": {
-			"text": "You cross safely and see a village in the distance. Maybe you’ll find help there.",
-			"choices":[{"text": "Okay", "next": "end"}]
-			},
-		"end": {
-		"text": "Your journey for now has ended. The forest whispers your name as you fade away..."
-		}
-}
+var story = {}
 
-var current_node_id = "start"
+@export var current_node_id = "start"
 var typing = false   # prevents overlapping input while typing
-var typing_speed = 0.03  # seconds per character (adjust to taste)
+@export var typing_speed = 0.01 # seconds per character (higher is slower)
 
 func _ready():
 	next_button.pressed.connect(_on_next_pressed)
+	load_story("res://story.json")
 	display_node(current_node_id)
 
 func display_node(node_id: String):
@@ -108,3 +72,15 @@ func _on_next_pressed():
 
 func on_choice_selected(next_node: String):
 	display_node(next_node)
+
+func load_story(path: String):
+	var file = FileAccess.open(path, FileAccess.READ)
+	if file:
+		var content = file.get_as_text()
+		var json_result = JSON.parse_string(content)
+		if typeof(json_result) == TYPE_DICTIONARY:
+			story = json_result
+		else:
+			push_error("Error parsing JSON file: %s" % path)
+	else:
+		push_error("Could not open story file: %s" % path)

@@ -6,6 +6,7 @@
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("1_7vw07")
+typing_speed = 0.02
 
 [node name="TextBox" type="PanelContainer" parent="CanvasLayer"]
 offset_right = 40.0
