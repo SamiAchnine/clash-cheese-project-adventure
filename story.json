@@ -5,34 +5,34 @@
 			{"text": "Take the left path", "next": "left_path"},
 			{"text": "Take the right path", "next": "right_path"}
 			]
-		},
+	},
 	"left_path": {
 		"text": "The left path leads you to an ancient ruin. A door stands before you.",
 		"choices": [
 			{"text": "Enter the ruin", "next": "inside_ruin"},
 			{"text": "Go back", "next": "start"}
 			]
-		},
-		"right_path": {
-			"text": "You follow the right path and find a calm river. It looks peaceful.",
-			"choices": [
-				{"text": "Drink from the river", "next": "river_drink"},
-				{"text": "Cross the river", "next": "cross_river"}
-				]
-			},
-		"inside_ruin": {
+	},
+	"right_path": {
+		"text": "You follow the right path and find a calm river. It looks peaceful.",
+		"choices": [
+			{"text": "Drink from the river", "next": "river_drink"},
+			{"text": "Cross the river", "next": "cross_river"}
+			]
+	},
+	"inside_ruin": {
 		"text": "Inside, you find a glowing artifact. As you reach out, light fills your vision.",
 		"choices":[{"text": "Okay", "next": "end"}]
-		},
-		"river_drink": {
+	},
+	"river_drink": {
 		"text": "The water is cool and refreshing. You feel renewed.",
 		"choices":[{"text": "Okay", "next": "end"}]
-		},
-		"cross_river": {
+	},
+	"cross_river": {
 			"text": "You cross safely and see a village in the distance. Maybe you’ll find help there.",
 			"choices":[{"text": "Okay", "next": "end"}]
-			},
-		"end": {
+	},
+	"end": {
 		"text": "Your journey for now has ended. The forest whispers your name as you fade away..."
-		}
+	}
 }
