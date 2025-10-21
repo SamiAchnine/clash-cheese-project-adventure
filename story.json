@@ -6,32 +6,42 @@
 			]
 	},
 	"start1": {
-		"text": "You will go about your life over the next month and will be faced with decisions.\nYou must choose the correct path each time, or be faced with brutal consequences.\nIf, however, you choose the best scenario, you will be able to use magic! Can you make it to the end while having a low enough cost?",
+		"text": "You will go about your life over the next month and will be faced with decisions.\nYou must choose the correct path each time, or be faced with brutal consequences.\nIf, however, you choose the best scenario, you will be able to use magic!\nCan you make it to the end while having a low enough cost?",
 		"choices": [
-			{"text": "Enter the ruin", "next": "inside_ruin"},
-			{"text": "Go back", "next": "start"}
+			{"text": "Accept the challenge", "next": "start2"},
+			{"text": "I'm too weak and scared and petite for this...", "next": "start2-0"}
 			]
 	},
-	"right_path": {
-		"text": "You follow the right path and find a calm river. It looks peaceful.",
+	"start2": {
+		"text": "Let your journey.....................\nbegin...",
 		"choices": [
-			{"text": "Drink from the river", "next": "river_drink"},
-			{"text": "Cross the river", "next": "cross_river"}
+			{"text": "Day 1", "next": "Day1-0"},
 			]
 	},
-	"inside_ruin": {
-		"text": "Inside, you find a glowing artifact. As you reach out, light fills your vision.",
-		"choices":[{"text": "Okay", "next": "end"}]
+	"start2-0": {
+		"text": "You thought you had a choice?\nIdiot.....",
+		"choices":[{"text": "Day 1", "next": "Day1-0"}]
 	},
-	"river_drink": {
-		"text": "The water is cool and refreshing. You feel renewed.",
-		"choices":[{"text": "Okay", "next": "end"}]
+	
+	
+	"Day1-0": {
+		"text": "You are a farmer who lives alone in the land of Minia.\nIt is closing in on the end of harvesting season, and you need to purchase food and firewood\nwith the money you make this season to survive the winter.",
+		"choices":[{"text": "Continue", "next": "Day1-1"}]
 	},
-	"cross_river": {
-			"text": "You cross safely and see a village in the distance. Maybe you’ll find help there.",
-			"choices":[{"text": "Okay", "next": "end"}]
+	"Day1-1": {
+			"text": "The closest town is a day’s journey--round trip, and you\nneed to sell before the end of the week, or the Woodcutter’s stores will run out.\nYou have had a bountiful harvest, generating more than enough food to survive the winter.\nIn a spur of the moment action, you come up with the idea to chop your own firewood.",
+			"choices":[{"text": "Continue", "next": "Day1-2"}]
 	},
-	"end": {
-		"text": "Your journey for now has ended. The forest whispers your name as you fade away..."
+	"Day1-2": {
+			"text": "You are impressed with your amazing intellect and have made\nthe journey to the town. You are now choosing between purchasing an axe to chop your own\nfirewood, or purchasing firewood for a higher cost from the Woodcutter.",
+			"choices":[{"text": "Continue", "next": "Day1-3"}]
+	},
+	"Day1-3": {
+			"text": "Your current inventory: 300 food, 500 Minian Dollars.\nBoth choices give you enough firewood to get through the winter.\nAfter you make this decision the day is over, and you go home.",
+			"choices":[{"text": "Purchase Axe for 50 Minian Dollars", "next": "end_dummy"},
+			{"text": "Purchase firewood for 150 Minian Dollars", "next": "end_dummy"}]
+	},
+	"end_dummy": {
+		"text": "Ending. (You should not be seeing this!)"
 	}
 }
