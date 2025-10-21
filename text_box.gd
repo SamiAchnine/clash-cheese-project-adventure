@@ -17,22 +17,32 @@ func _ready():
 	next_button.pressed.connect(_on_next_pressed)
 	load_story("res://story.json")
 	display_node(current_node_id)
+	
+func _input(event):
+	if event.is_action_pressed("ui_accept") and typing:
+		typing = false
+		_show_choices_or_next()
+
 
 func display_node(node_id: String):
 	current_node_id = node_id
 	var node_data = story[node_id]
-# Clear UI
+	# Clear UI
 	for child in choices_container.get_children():
 		child.queue_free()
 		
 	next_button.visible = false
 	text_label.text = ""
 
-# Start typewriter animation
 	type_text(node_data["text"])
-# Setup choices or next
+
+func _show_choices_or_next():
+	var node_data = story[current_node_id]
+	# Remove any existing choices (optional safety)
+	for child in choices_container.get_children():
+		child.queue_free()
+		
 	if "choices" in node_data:
-		await get_tree().create_timer(len(node_data["text"]) * typing_speed).timeout
 		for choice in node_data["choices"]:
 			var btn = Button.new()
 			btn.text = choice["text"]
@@ -46,6 +56,7 @@ func display_node(node_id: String):
 			next_button.text = "End"
 			next_button.disabled = true
 
+
 # TYPEWRITER EFFECT
 func type_text(full_text: String) -> void:
 	typing = true
@@ -58,6 +69,8 @@ func type_text(full_text: String) -> void:
 			
 	text_label.text = full_text
 	typing = false
+	_show_choices_or_next()
+
 
 func _on_next_pressed():
 	# Skip if typing

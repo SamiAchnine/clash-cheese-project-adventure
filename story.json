@@ -1,13 +1,12 @@
 {
 "start": {
-		"text": "You wake up in a dark forest. Two paths lie before you.",
+		"text": "Your name is Joshua Mortin, and you are 36 years of age. You live in a world that\nis much like Earth, but it is a land ripe with magic, however the odds of a person\nbeing granted the ability to use magic is very small. You, unfortunately, have\nnot been born with the ability to use magic.",
 		"choices": [
-			{"text": "Take the left path", "next": "left_path"},
-			{"text": "Take the right path", "next": "right_path"}
+			{"text": "Continue", "next": "start1"},
 			]
 	},
-	"left_path": {
-		"text": "The left path leads you to an ancient ruin. A door stands before you.",
+	"start1": {
+		"text": "You will go about your life over the next month and will be faced with decisions.\nYou must choose the correct path each time, or be faced with brutal consequences.\nIf, however, you choose the best scenario, you will be able to use magic! Can you make it to the end while having a low enough cost?",
 		"choices": [
 			{"text": "Enter the ruin", "next": "inside_ruin"},
 			{"text": "Go back", "next": "start"}
