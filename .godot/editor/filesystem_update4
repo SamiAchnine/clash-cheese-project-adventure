@@ -1,3 +1,4 @@
 res://TEST.tscn
-res://story.json
+res://ButtonJiggle.gdshader
+res://buttonJiggleScript.gd
 res://text_box.gd

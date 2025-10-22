@@ -1,21 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://btdjgnw5sylk2"]
+[gd_scene load_steps=5 format=3 uid="uid://btdjgnw5sylk2"]
 
 [ext_resource type="Script" uid="uid://d4jo2b6s5qrts" path="res://text_box.gd" id="1_7vw07"]
+[ext_resource type="Shader" uid="uid://opujuhy1pvjh" path="res://ButtonJiggle.gdshader" id="2_cd2k1"]
 [ext_resource type="Script" uid="uid://djboehmhq10p1" path="res://buttonJiggleScript.gd" id="3_r7qem"]
-[ext_resource type="VideoStream" uid="uid://c2igc3jdmj0m3" path="res://TalkingFlower/TalkingFlowerTalk.ogv" id="3_si16d"]
-
-[sub_resource type="Shader" id="Shader_cd2k1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r7qem"]
-render_priority = 0
-shader = SubResource("Shader_cd2k1")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cd2k1"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 35
-corner_radius_top_right = 35
-corner_radius_bottom_right = 35
-corner_radius_bottom_left = 35
+shader = ExtResource("2_cd2k1")
+shader_parameter/amplitude = 0.0
+shader_parameter/frequency = 20.0
+shader_parameter/speed = 10.0
 
 [node name="Node2D" type="Node2D"]
 
@@ -44,21 +37,3 @@ script = ExtResource("3_r7qem")
 
 [node name="ChoicesContainer" type="VBoxContainer" parent="CanvasLayer/TextBox/VBoxContainer"]
 layout_mode = 2
-
-[node name="FlowerCanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Panel" type="Panel" parent="FlowerCanvasLayer"]
-offset_left = 1009.0
-offset_top = 573.0
-offset_right = 1251.0
-offset_bottom = 636.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_cd2k1")
-
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="FlowerCanvasLayer"]
-offset_left = 867.0
-offset_top = 272.0
-offset_right = 1237.0
-offset_bottom = 564.0
-stream = ExtResource("3_si16d")
-autoplay = true
-loop = true

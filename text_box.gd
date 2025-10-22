@@ -17,6 +17,17 @@ func _ready():
 	next_button.pressed.connect(_on_next_pressed)
 	load_story("res://story.json")
 	display_node(current_node_id)
+	next_button.mouse_entered.connect(func():
+		var t = next_button.create_tween()
+		t.tween_property(next_button, "scale", Vector2(1.1, 0.9), 0.1)
+		t.tween_property(next_button, "scale", Vector2(0.95, 1.05), 0.1)
+		t.tween_property(next_button, "scale", Vector2(1, 1), 0.1)
+	)
+	next_button.mouse_exited.connect(func():
+		var t = next_button.create_tween()
+		t.tween_property(next_button, "scale", Vector2(1, 1), 0.1)
+	)
+
 	
 func _input(event):
 	if event.is_action_pressed("ui_accept") and typing:
@@ -46,8 +57,30 @@ func _show_choices_or_next():
 		for choice in node_data["choices"]:
 			var btn = Button.new()
 			btn.text = choice["text"]
+			
+			# --- Center pivot after layout ---
+			btn.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+			btn.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+			
+			# --- Add jello hover animation ---
+			btn.mouse_entered.connect(func():
+				btn.pivot_offset = btn.size / 2
+				var t = btn.create_tween()
+				t.tween_property(btn, "scale", Vector2(1.1, 0.9), 0.08)
+				t.tween_property(btn, "scale", Vector2(0.95, 1.05), 0.08)
+				t.tween_property(btn, "scale", Vector2(1, 1), 0.08)
+			)
+
+			btn.mouse_exited.connect(func():
+				var t = btn.create_tween()
+				t.tween_property(btn, "scale", Vector2(1, 1), 0.15)
+			)
+			
 			btn.pressed.connect(func(): on_choice_selected(choice["next"]))
 			choices_container.add_child(btn)
+			
+			# ✅ Defer pivot setting until layout is complete
+			btn.call_deferred("set_pivot_offset_center")
 	else:
 		next_button.visible = true
 		if "next" in node_data:
@@ -55,6 +88,8 @@ func _show_choices_or_next():
 		else:
 			next_button.text = "End"
 			next_button.disabled = true
+
+
 
 
 # TYPEWRITER EFFECT
@@ -97,3 +132,4 @@ func load_story(path: String):
 			push_error("Error parsing JSON file: %s" % path)
 	else:
 		push_error("Could not open story file: %s" % path)
+		
