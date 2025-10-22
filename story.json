@@ -42,7 +42,7 @@
 			{"text": "Purchase firewood for 150 Minian Dollars", "next": "Day2-0-c2"}]
 	},
 	"Day2-0-c1": {
-			"text": "There are 10 days of winter in this world, and each day you consume 15 food.\nYour inventory is now 285 food and 450 Minian Dollars.\nThere is no time to waste, however, as you need to chop some firewood in order to stay warm.\nShould you fail to heat your home for a night, there is a 33% chance that you will freeze to death. Each night requires 20 wood.",
+			"text": "There are 10 days of winter in this world, and each day you consume 15 food.\nYour inventory is now 285 food and 450 Minian Dollars.\nThere is no time to waste, however, as you need to chop some firewood in order to stay warm.\nShould you fail to heat your home for a night, there is a 33% chance that you will freeze to death.\nEach night requires 20 wood.",
 			"choices":[{"text": "Continue", "next": "Day2-0-c1-1"}]
 	},
 	"Day2-0-c1-1": {

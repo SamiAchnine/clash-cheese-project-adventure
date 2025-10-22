@@ -1,12 +1,12 @@
-VideoStreamPlayer
 Panel
+VBoxContainer
+Label
+VideoStreamPlayer
 CanvasLayer
 CollisionShape3D
 CollisionPolygon3D
 Node3D
-VBoxContainer
 Button
-Label
 PanelContainer
 TextEdit
 CanvasGroup
