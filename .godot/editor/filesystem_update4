@@ -2,3 +2,4 @@ res://TEST.tscn
 res://ButtonJiggle.gdshader
 res://buttonJiggleScript.gd
 res://text_box.gd
+res://story.json

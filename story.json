@@ -38,9 +38,34 @@
 	},
 	"Day1-3": {
 			"text": "Your current inventory: 300 food, 500 Minian Dollars.\nBoth choices give you enough firewood to get through the winter.\nAfter you make this decision the day is over, and you go home.",
-			"choices":[{"text": "Purchase Axe for 50 Minian Dollars", "next": "end_dummy"},
-			{"text": "Purchase firewood for 150 Minian Dollars", "next": "end_dummy"}]
+			"choices":[{"text": "Purchase Axe for 50 Minian Dollars", "next": "Day2-0-c1"},
+			{"text": "Purchase firewood for 150 Minian Dollars", "next": "Day2-0-c2"}]
 	},
+	"Day2-0-c1": {
+			"text": "There are 10 days of winter in this world, and each day you consume 15 food.\nYour inventory is now 285 food and 450 Minian Dollars.\nThere is no time to waste, however, as you need to chop some firewood in order to stay warm.\nShould you fail to heat your home for a night, there is a 33% chance that you will freeze to death. Each night requires 20 wood.",
+			"choices":[{"text": "Continue", "next": "Day2-0-c1-1"}]
+	},
+	"Day2-0-c1-1": {
+			"text": "You awake bright and early, get dressed, pickup your axe, and head outside.\nYou spot a forest 30 minutes away, so you begin the trek over there.\nThis journey is extremely uneventful, but due to the small size of the forest,\nyou only gain 60 wood. It’s not nearly enough, and you are a bit worried.\nYou see another forest, and head over there, in hopes of more.",
+			"choices":[{"text": "Continue", "next": "Day2-0-c1-2"}]
+	},
+	"Day2-0-c1-2": {
+			"text": "You arrive at the forest and chop it down, gaining you 140 wood.\nThis is enough to survive the rest of winter, so you head home, but on the way\n you meet a traveler. This traveler tells you to, “Be wary of your journey home,”\nwhich send shivers down your spine.",
+			"choices":[{"text": "Continue to next day", "next": "end_dummy"}]
+	},
+	"Day2-0-c2": {
+			"text": "There are 10 days of winter in this world, and each day you consume\n15 food. Your inventory is now 285 food, 350 Minian Dollars, and 400 wood.\nShould you fail to heat your home for a night, there is a 33% chance that you will freeze to death.\nYou aren’t worried however, as you only use 20 wood per night, and have plenty wood leftover.",
+			"choices":[{"text": "Continue", "next": "Day2-0-c2-1"}]
+	},
+	"Day2-0-c2-1": {
+			"text": "You are sitting cozy in your house, sipping on some nice, warm tea that your neighbor,\nMary, gifted you free of charge after you helped her travel to and from\ntown a few weeks earlier. Speak of the devil, you hear the door knock\nand believe it to be Mary, as a female voice calls out, “Hello?”\nYou head to the door and open it, confused at the sight in front of you.",
+			"choices":[{"text": "Continue", "next": "Day2-0-c2-2"}]
+	},
+	"Day2-0-c2-2": {
+			"text": "There stands a female figure, who, upon laying her eyes on you, grabs a club and beats you over the head.\nYou fall to the floor and turn to run, but she hits you again,\nthis time in the leg. You wobble and fall again, but can’t use your leg, and turn to see it broken,\nwhich sends you spiraling into shock, losing consciousness.",
+			"choices":[{"text": "Continue to next day", "next": "end_dummy"}]
+	},
+	
 	"end_dummy": {
 		"text": "Ending. (You should not be seeing this!)"
 	}
