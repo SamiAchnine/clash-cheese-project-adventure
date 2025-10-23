@@ -1,5 +1,3 @@
 res://TEST.tscn
-res://talking_flower.gd
-res://flower_story.json
 res://story.json
-res://text_box.gd
+res://flower_story.json

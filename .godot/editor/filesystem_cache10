@@ -1,15 +1,13 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1761175542
-buttonJiggleScript.gd::GDScript::7793883589191589164::1761173399::0::1::::<>Button<><>0<>0<><>::
-flower_story.json::JSON::-1::1761175000::0::1::::<><><>0<>0<><>::
-icon.svg::CompressedTexture2D::9056145395693041698::1761173399::1761173399::1::::<><><>0<>0<>7c5307d87ad5ae869071a210c13fa530<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-README.md::TextFile::-1::1761173399::0::1::::<><><>0<>0<><>::
-talking_flower.gd::GDScript::3106279165746877675::1761175542::0::1::::<>CanvasLayer<><>0<>0<><>::
-Screenshot 2025-10-22 130758.png::CompressedTexture2D::7878521049880484933::1761173399::1761173399::1::::<><><>0<>0<>564d3f89b27fe342ea376c7263a00d0a<>res://.godot/imported/Screenshot 2025-10-22 130758.png-7f2239a05b03db7bce61d2077048ed28.ctex::
-story.json::JSON::-1::1761173399::0::1::::<><><>0<>0<><>::
-TEST.tscn::PackedScene::3726759731953545403::1761175542::0::1::::<><><>0<>0<><>::uid://d4jo2b6s5qrts::::res://text_box.gd<>uid://djboehmhq10p1::::res://buttonJiggleScript.gd<>uid://bkix71odxy8gl::::res://talking_flower.gd<>uid://c2igc3jdmj0m3::::res://TalkingFlower/TalkingFlowerTalk.ogv<>uid://cx3o668b1ntpm::::res://TalkingFlower/TalkingFlowerIdle.ogv
-text_box.gd::GDScript::9214216271973806908::1761173399::0::1::::<>CanvasLayer<><>0<>0<><>::
-::res://TalkingFlower/::1761175825
-TalkingFlowerBG.png::CompressedTexture2D::3171541053902212226::1761175825::1761175825::1::::<><><>0<>0<>dedced6481cc70a1036c28a3bfdc5cef<>res://.godot/imported/TalkingFlowerBG.png-cd963cabaf20c67ce208843639942049.ctex::
-TalkingFlowerIdle.ogv::VideoStreamTheora::6445894424967516734::1761173932::0::1::::<><><>0<>0<><>::
-TalkingFlowerTalk.ogv::VideoStreamTheora::6684824525899732416::1761173937::0::1::::<><><>0<>0<><>::
+::res://::1761238017
+buttonJiggleScript.gd::GDScript::7793883589191589164::1761154248::0::1::::<>Button<><>0<>0<><>::
+flower_story.json::JSON::-1::1761237989::0::1::::<><><>0<>0<><>::
+icon.svg::CompressedTexture2D::9056145395693041698::1760979048::1760979059::1::::<><><>0<>0<>7c5307d87ad5ae869071a210c13fa530<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+README.md::TextFile::-1::1760979346::0::1::::<><><>0<>0<><>::
+story.json::JSON::-1::1761237989::0::1::::<><><>0<>0<><>::
+talking_flower.gd::GDScript::3106279165746877675::1761237989::0::1::::<>CanvasLayer<><>0<>0<><>::
+TEST.tscn::PackedScene::3726759731953545403::1761237989::0::1::::<><><>0<>0<><>::uid://d4jo2b6s5qrts::::res://text_box.gd<>uid://djboehmhq10p1::::res://buttonJiggleScript.gd<>uid://bkix71odxy8gl::::res://talking_flower.gd<>uid://c2igc3jdmj0m3::::res://TalkingFlower/TalkingFlowerTalk.ogv<>uid://cx3o668b1ntpm::::res://TalkingFlower/TalkingFlowerIdle.ogv
+text_box.gd::GDScript::9214216271973806908::1761237989::0::1::::<>CanvasLayer<><>0<>0<><>::
+::res://TalkingFlower/::1761237989
+TalkingFlowerIdle.ogv::VideoStreamTheora::6445894424967516734::1761237989::0::1::::<><><>0<>0<><>::
+TalkingFlowerTalk.ogv::VideoStreamTheora::6684824525899732416::1761237989::0::1::::<><><>0<>0<><>::
