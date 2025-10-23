@@ -1,3 +1,6 @@
 res://TEST.tscn
 res://story.json
 res://flower_story.json
+res://help_button.gd
+res://background.gdshader
+res://talking_flower.gd

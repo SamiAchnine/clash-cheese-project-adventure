@@ -1,12 +1,13 @@
+ColorRect
+CanvasLayer
+Button
 Panel
 VBoxContainer
 Label
 VideoStreamPlayer
-CanvasLayer
 CollisionShape3D
 CollisionPolygon3D
 Node3D
-Button
 PanelContainer
 TextEdit
 CanvasGroup

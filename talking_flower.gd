@@ -1,19 +1,17 @@
-# This script was also mostly written by GPT
 extends CanvasLayer
 
 @onready var flower_label = $FlowerBox/Label
 @onready var talk_player = $TalkingFlowerTalkPlayer
 @onready var idle_player = $TalkingFlowerIdlePlayer
 
-# Reference to your main text box scene
 @export var text_box_path: NodePath
 var text_box: Node
 
-# Flower story data
 var flower_story = {}
 var current_flower_id = ""
 var typing = false
 @export var typing_speed = 0.02 # seconds per character
+
 
 func _ready():
 	if text_box_path != null:
@@ -24,17 +22,16 @@ func _ready():
 
 	load_flower_story("res://flower_story.json")
 
-	# Start idle animation initially
+	talk_player.loop = true
+	idle_player.loop = true
+
 	_play_idle()
 
-	# Immediately display corresponding flower dialogue if any
 	_update_flower_dialogue(text_box.current_node_id)
-
-	# Watch for changes in main text box
 	set_process(true)
 
 
-func _process(delta):
+func _process(_delta):
 	if text_box and text_box.current_node_id != current_flower_id:
 		_update_flower_dialogue(text_box.current_node_id)
 
@@ -49,49 +46,53 @@ func _update_flower_dialogue(node_id: String):
 
 	flower_label.visible = true
 	var flower_text = flower_story[node_id]["text"]
-	type_flower_text(flower_text)
 
+	# Start talk video asynchronously before typing begins
+	await _play_talk_async()
 
-func type_flower_text(full_text: String) -> void:
-	if typing:
-		return
-	typing = true
+	# Run the typewriter effect
+	await type_flower_text(flower_text)
 
-	# Switch to talking animation
-	_play_talk()
-
-	flower_label.text = ""
-	for i in range(full_text.length()):
-		flower_label.text = full_text.substr(0, i + 1)
-		await get_tree().create_timer(typing_speed).timeout
-		if not typing:
-			break
-
-	# Done typing
-	flower_label.text = full_text
-	typing = false
-
-	# Switch back to idle animation
+	# Return to idle once finished
 	_play_idle()
 
 
-# --- VIDEO PLAYER CONTROL ---
-func _play_talk():
+# --- VIDEO CONTROL -----------------------------------------------------------
+
+func _play_talk_async() -> void:
+	# Stop idle, then start talk after a frame so decoding starts properly
 	if idle_player.is_playing():
 		idle_player.stop()
-	if not talk_player.is_playing():
-		talk_player.play()
+	await get_tree().process_frame
+	talk_player.play()
+	await get_tree().process_frame
 
 
-func _play_idle():
+func _play_idle() -> void:
 	if talk_player.is_playing():
 		talk_player.stop()
 	if not idle_player.is_playing():
 		idle_player.play()
 
 
+# --- TYPEWRITER EFFECT -------------------------------------------------------
 
-# --- STORY LOADING ---
+func type_flower_text(full_text: String) -> void:
+	if typing:
+		return
+	typing = true
+	flower_label.text = ""
+
+	for i in range(full_text.length()):
+		flower_label.text = full_text.substr(0, i + 1)
+		await get_tree().create_timer(typing_speed).timeout
+		await get_tree().process_frame  # keeps video rendering smooth
+		if not typing:
+			break
+
+	flower_label.text = full_text
+	typing = false
+
 func load_flower_story(path: String):
 	var file = FileAccess.open(path, FileAccess.READ)
 	if file:
@@ -100,6 +101,7 @@ func load_flower_story(path: String):
 		if typeof(json_result) == TYPE_DICTIONARY:
 			flower_story = json_result
 		else:
-			push_error("Error parsing flower story JSON: %s" % path)
+			push_error("Error parsing JSON file: %s" % path)
 	else:
-		push_error("Could not open flower story file: %s" % path)
+		push_error("Could not open story file: %s" % path)
+		
