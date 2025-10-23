@@ -115,7 +115,7 @@
 			"choices":[{"text": "Continue to the end", "next": "End-c1-0"}]
 	},
 	"Day4-0-c2-0": {
-			"text": "You scream at it, and walk in its range. It lunges at you and you hold the chain out in front of it.\nIt uses its irregular teeth to bit through the chain, and you hit it before it gets too close to you.\nIt staggers back, and then lunges at you again to kill you, but you use the broken chain link and stab it in the heart.\nIt doesn’t die however, so you grab a length of chain and wrap it around its neck.\nAfter stranling it, it bursts into flames and turns to ash in the span of a couple seconds.\nYou then climb out of the room, appalled at what you just did.",
+			"text": "You scream at it, and walk in its range. It lunges at you and you hold the chain out in front of it.\nIt uses its irregular teeth to bit through the chain, and you hit it before it gets too close to you.\nIt staggers back, and then lunges at you again to kill you, but you use the broken chain link and stab it in the heart.\nIt doesn’t die however, so you grab a length of chain and wrap it around its neck.\nAfter strangling it, it bursts into flames and turns to ash in the span of a couple seconds.\nYou then climb out of the room, appalled at what you just did.",
 			"choices":[{"text": "Continue", "next": "Day4-0-c2-1"}]
 	},
 	"Day4-0-c2-1": {
@@ -131,6 +131,6 @@
 			"choices":[{"text": "The End", "next": "Final"}]
 	},
 	"Final": {
-		"text": "Thanks for playing! This is the end.\nPress End to exit the game."
+		"text": "Thanks for playing! This is the end.\nPress End to exit the game.\nCREDITS:\nStory written by Alexander Frieders\nVisuals done by Sami Achnine\n95% of the programming done by ChatGPT"
 	}
 }

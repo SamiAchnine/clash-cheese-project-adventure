@@ -1,3 +1,4 @@
+# This script was also mostly written by GPT
 extends CanvasLayer
 
 @onready var flower_label = $FlowerBox/Label

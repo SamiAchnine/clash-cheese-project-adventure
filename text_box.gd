@@ -1,4 +1,4 @@
-# Entire script written by GPT. Some modifications were made by me (sami).
+# Entire script written by GPT. Some modifications were made by me (Sami).
 extends CanvasLayer
 
 @onready var text_label = $TextBox/VBoxContainer/TextLabel
@@ -8,7 +8,7 @@ extends CanvasLayer
 # STORY DATA
 # Each "node" of the story has an id, text, and optional choices that lead to another id.
 var story = {}
-
+# Sami note: No part of the story was written by ChatGPT. 100% of the work was done by Xander
 @export var current_node_id = "start"
 var typing = false   # prevents overlapping input while typing
 @export var typing_speed = 0.01 # seconds per character (higher is slower)
@@ -83,11 +83,9 @@ func _show_choices_or_next():
 			btn.call_deferred("set_pivot_offset_center")
 	else:
 		next_button.visible = true
-		if "next" in node_data:
-			next_button.disabled = false
-		else:
-			next_button.text = "End"
-			next_button.disabled = true
+		next_button.text = "Next" if "next" in node_data else "End"
+		next_button.disabled = false
+
 
 
 
@@ -112,11 +110,18 @@ func _on_next_pressed():
 	if typing:
 		typing = false
 		return
+		
 	var node_data = story[current_node_id]
+	
+	# If there's a "next" node, move to it
 	if "next" in node_data:
 		display_node(node_data["next"])
 	else:
-		text_label.text = "The End."
+		# Otherwise, close the game when the button is pressed
+		var local_scenetree = get_tree()
+		local_scenetree.root.propagate_notification(NOTIFICATION_WM_CLOSE_REQUEST)
+		local_scenetree.quit()
+
 
 func on_choice_selected(next_node: String):
 	display_node(next_node)
