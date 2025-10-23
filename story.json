@@ -51,7 +51,15 @@
 	},
 	"Day2-0-c1-2": {
 			"text": "You arrive at the forest and chop it down, gaining you 140 wood.\nThis is enough to survive the rest of winter, so you head home, but on the way\n you meet a traveler. This traveler tells you to, “Be wary of your journey home,”\nwhich send shivers down your spine.",
-			"choices":[{"text": "Continue to next day", "next": "end_dummy"}]
+			"choices":[{"text": "Continue", "next": "Day2-0-c1-3"}]
+	},
+	"Day2-0-c1-3": {
+			"text": "On the way home, you spot a rock in the distance, but as you approach it, you see it is actually an old hag with a cane.\nYou call out, “Hey, are you alright?” but she doesn’t respond. Instead,\nshe takes her cane and breaks it in half with unnatural strength. ",
+			"choices":[{"text": "Continue", "next": "Day2-0-c1-4"}]
+	},
+	"Day2-0-c1-4": {
+			"text": "She turns and screams, \"OOBA SCHE LES BOUUQA!\" and lunges at you with her cane.\nShe smacks you on the kneecap, revealing the weight of the object, and you fall to the floor,\nwailing in fear. You start calling for help but can only get half a cry out before\nshe raises her hand over her head and screams in a guttural voice, \"DIE MIN-IAN!\"",
+			"choices":[{"text": "Continue to next day", "next": "Day3-0-0"}]
 	},
 	"Day2-0-c2": {
 			"text": "There are 10 days of winter in this world, and each day you consume\n15 food. Your inventory is now 285 food, 350 Minian Dollars, and 400 wood.\nShould you fail to heat your home for a night, there is a 33% chance that you will freeze to death.\nYou aren’t worried however, as you only use 20 wood per night, and have plenty wood leftover.",
@@ -63,10 +71,66 @@
 	},
 	"Day2-0-c2-2": {
 			"text": "There stands a female figure, who, upon laying her eyes on you, grabs a club and beats you over the head.\nYou fall to the floor and turn to run, but she hits you again,\nthis time in the leg. You wobble and fall again, but can’t use your leg, and turn to see it broken,\nwhich sends you spiraling into shock, losing consciousness.",
-			"choices":[{"text": "Continue to next day", "next": "end_dummy"}]
+			"choices":[{"text": "Continue to next day", "next": "Day3-0-0"}]
 	},
-	
-	"end_dummy": {
-		"text": "Ending. (You should not be seeing this!)"
+	"Day3-0-0": {
+			"text": "You awake in a room an unknown amount of time later and see that all of your possessions have been stolen.\nYou pick your head up from the bottom of the floor dungeon, and see another Minian\nin the other corner of the room. You call out-- \"Hey, are you awake?\"\nHe doesn’t respond, so you drag yourself over there and tap him with your hands.\"Are you ok?\"\nHe suddenly screams and bends his back so far to the point it breaks, and he turns to look at you.\nHe has blood red eyes and gray skin and lunges at you.",
+			"choices":[{"text": "Continue", "next": "Day3-0-1"}]
+	},
+	"Day3-0-1": {
+			"text": "You just barely manage to get away until he is yanked back by the chains, and you hear a voice above.\nThere stands a tall menacing woman, with a more hunched and older hag.\n\"I see you’ve met, but why don’t I introduce myself to you again.\"\nYou look at her confused and ask, \"Why am I here?\"",
+			"choices":[{"text": "Continue", "next": "Day3-0-2"}]
+	},
+	"Day3-0-2": {
+			"text": "\"That doesn’t matter,\" she says. \"But what does matter is this person right here.\nIn fact, it isn’t a random person at all. He’s............................................You.\"",
+			"choices":[{"text": "Continue", "next": "Day3-0-3"}]
+	},
+	"Day3-0-3": {
+			"text": "\"How can that be?\" You ask. After looking at the other creature for quite a while,\nyou realize that it does have some resembling features, but you are still confused as it looks so wretched.",
+			"choices":[{"text": "Continue", "next": "Day3-0-4"}]
+	},
+	"Day3-0-4": {
+			"text": "She says, \"You remember when you made the decision between the axe and the wood pile, correct?\nThat decision made a split in the timeline.\"\nYou stare dumbfounded, this makes no sense at all!",
+			"choices":[{"text": "Continue", "next": "Day3-0-5"}]
+	},
+	"Day3-0-5": {
+			"text": "\"Ah, whatever, it doesn’t matter if you understand or not, you’ll still be experimented on regardless.\"\nThe words click. You look at the other person, and realize he’s been experimented on. You start mumbling,\n\"No, no, no, no, no.\"\nYou scream, \"Please, please don’t do this to me. I- I- I have a family!\"\nShe looks at you incredulously and laughs, \"HA! You? You live alone!\nWe know everything about you now that you fed your blood to us!\"",
+			"choices":[{"text": "Continue", "next": "Day3-0-6"}]
+	},
+	"Day3-0-6": {
+			"text": "You hear this and grow number. You curl up in a ball. \"Vampires? Seriously? They couldn’t possibly exist.\"\nAfter you whisper this to yourself, you lose all hope. You hug yourself and hear them laughing and walking away.\nYou start to cry until you see something through your tears. A way out.\nYou see a ledge just high enough to jump and grab on to\nand then jump to the platform to get out.\nYou also realize that the only way to get out is to- lose your humanity.",
+			"choices":[{"text": "Continue", "next": "Day3-0-7"}]
+	},
+	"Day3-0-7": {
+			"text": "You are then faced with another decision. Do you either\nBait your other self into biting your chain to break it, escape and risk the other self screaming and drawing attention.\nOR\nBait your other self into biting your chain to break it and then kill your other self to keep quiet.\nNote: this will advance time to the next day.",
+			"choices":[{"text": "Risk it?", "next": "Day4-0-c1-0"},
+			{"text": "Kill it!", "next": "Day4-0-c2-0"}]
+	},
+	"Day4-0-c1-0": {
+			"text": "You scream at it, and walk in its range. It lunges at you and you hold the chain out in front of it.\nIt uses its irregular teeth to bite through the chain, and you run to the ledge.\nYou climb up on it just as it gets to you, but you stand out of its reach. You then make the jump\nto the upper ledge, and scramble on. Your other self starts shrieking, but gets zapped from the ceiling by\na device. You hear over the radio, \"Shut up already, you animal. You’ll get fed later!\"\nIt continues howling however, and you leave the room before someone comes to check.",
+			"choices":[{"text": "Continue", "next": "Day4-0-c1-1"}]
+	},
+	"Day4-0-c1-1": {
+			"text": "You make your way through the maze of a place, and see light at the end of the last hallway.\nYou run as fast as you can, but just before you reach the exit, you hear a voice growl, \"Hey! The Min-ian is escaping!\"\nYou turn your head while you are running and see a creature\nbarreling towards you on all fours. You bust out of the hallway onto a wide open area, and you lose all hope\nas your eyes adjust to the sunlight. You are surrounded by water on all sides, as you are on an island.\nYou drop to your knees and scream at the sky, \"WHY ME G-\" but your sentence is cut short as the vampire behind you caught up.",
+			"choices":[{"text": "Continue to the end", "next": "End-c1-0"}]
+	},
+	"Day4-0-c2-0": {
+			"text": "You scream at it, and walk in its range. It lunges at you and you hold the chain out in front of it.\nIt uses its irregular teeth to bit through the chain, and you hit it before it gets too close to you.\nIt staggers back, and then lunges at you again to kill you, but you use the broken chain link and stab it in the heart.\nIt doesn’t die however, so you grab a length of chain and wrap it around its neck.\nAfter stranling it, it bursts into flames and turns to ash in the span of a couple seconds.\nYou then climb out of the room, appalled at what you just did.",
+			"choices":[{"text": "Continue", "next": "Day4-0-c2-1"}]
+	},
+	"Day4-0-c2-1": {
+			"text": "You make your way through the maze of a place, and see light at the end of the last hallway.\nYou run as fast as you can, but just before you reach the exit, you hear a voice growl, \"Hey! The Min-ian is escaping!\"\nYou turn your head while you are running and see a creature\nbarreling towards you on all fours. You bust out of the hallway onto a wide open area, and you see a vehicle\nstood on the road.You run over to it and smash down on the gas, watching in the rear-view mirror as the horde of\nvampires that gathered grow more miniscule in the distance. You breath a sigh of relief,\nshocked that you had to kill yourself to survive.",
+			"choices":[{"text": "Continue to the end", "next": "End-c2-0"}]
+	},
+	"End-c1-0": {
+			"text": "Your life has now ended.\nYou kept the other version of yourself alive to save humanity, but you couldn’t save your life.\nDo you think you made the correct decisions?",
+			"choices":[{"text": "The End", "next": "Final"}]
+	},
+	"End-c2-0": {
+			"text": "You survived, but at what cost?\nYou took a man’s life to save your own, and no matter what you do, nothing can change that.\nYou could have escaped and left him alive... he could still be alive right now!\nDo you think you made the correct choices?",
+			"choices":[{"text": "The End", "next": "Final"}]
+	},
+	"Final": {
+		"text": "Thanks for playing! This is the end.\nPress End to exit the game."
 	}
 }
