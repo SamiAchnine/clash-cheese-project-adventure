@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://btdjgnw5sylk2"]
 
 [ext_resource type="Script" uid="uid://d4jo2b6s5qrts" path="res://text_box.gd" id="1_7vw07"]
-[ext_resource type="Script" uid="uid://bkix71odxy8gl" path="res://talking_flower.gd" id="3_4jtfw"]
 [ext_resource type="Script" uid="uid://djboehmhq10p1" path="res://buttonJiggleScript.gd" id="3_r7qem"]
+[ext_resource type="Script" uid="uid://bkix71odxy8gl" path="res://talking_flower.gd" id="3_sfssh"]
 [ext_resource type="VideoStream" uid="uid://c2igc3jdmj0m3" path="res://TalkingFlower/TalkingFlowerTalk.ogv" id="3_si16d"]
 [ext_resource type="VideoStream" uid="uid://cx3o668b1ntpm" path="res://TalkingFlower/TalkingFlowerIdle.ogv" id="4_si16d"]
 [ext_resource type="Script" uid="uid://dsyvndicuu2gt" path="res://help_button.gd" id="6_fy5ud"]
@@ -59,8 +59,8 @@ script = ExtResource("3_r7qem")
 layout_mode = 2
 
 [node name="TalkingFlower" type="CanvasLayer" parent="."]
-script = ExtResource("3_4jtfw")
-text_box_path = NodePath("FlowerBox/Label")
+script = ExtResource("3_sfssh")
+text_box_path = NodePath("../CanvasLayer")
 
 [node name="FlowerBox" type="VBoxContainer" parent="TalkingFlower"]
 anchors_preset = -1
